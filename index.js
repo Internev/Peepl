@@ -21,9 +21,11 @@ http.createServer(function(req, res) {
         console.log(`We assigned url to ${_url}`);
         res.writeHead(200);
         return res.end('employee list');
-    } else if (_url = /^\/employees\/(\d+)$/i.exec(req.url)) {
+    }
+    // as above. Note that grouping \d makes it a new item in the _url object. Whole url is still first item though.
+    else if (_url = /^\/employees\/(\d+)$/i.exec(req.url)) {
         res.writeHead(200);
-        return res.end('a single employee');
+        return res.end(`a single employee, url is ${_url[1]}`);
     } else {
         res.writeHead(200, {
             'Content-Type': 'text/html'
@@ -31,8 +33,6 @@ http.createServer(function(req, res) {
         res.write(`The current time is ${Date.now()}`)
         res.end('<h1>We did it</h1>');
     }
-
-
 }).listen(1337, 'localhost');
 
 console.log("Shard up and listening on localhost");
