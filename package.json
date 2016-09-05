@@ -1,0 +1,14 @@
+{
+  "name": "peepl",
+  "version": "1.0.0",
+  "description": "Helpin' Humans",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Internev",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
+}
